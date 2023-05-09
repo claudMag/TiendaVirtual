@@ -1,0 +1,16 @@
+<div class="card" (click)="mostrarArticuloDetalle(articulo.id)" *ngIf="articulo">
+  <div class="heart-icon-container">
+    <i [ngClass]="articulo.favorite===true ? 'fas fa-heart':'far fa-heart'" ></i>
+  </div>
+  <img class="card-img-top" [src]="articulo.image" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{articulo.name}}</h5>
+    <p class="card-text text-center">
+      <span [ngClass]="articulo.sale_price!==null ? 'text-decoration-line-through' : 'text-decoration-none'">
+        {{articulo.regular_price | currency:'EUR':'symbol'}}</span>
+      <span *ngIf="articulo.sale_price" class="text-danger">
+        {{articulo.sale_price | currency:'EUR':'symbol'}}
+      </span>
+    </p>
+  </div>
+</div>

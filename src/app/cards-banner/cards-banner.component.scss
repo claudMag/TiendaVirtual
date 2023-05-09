@@ -1,0 +1,10 @@
+img {
+  height: 400px;
+  object-fit: cover;
+}
+.card:hover, card-img-top:hover {
+  filter: brightness(75%);
+  transition: filter 0.3s ease-in-out;
+}
+
+

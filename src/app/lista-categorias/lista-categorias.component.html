@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="mt-5 text-center">Comprar por categoría</h2>
+  <div class="d-flex justify-content-center align-items-center mt-3">
+    <div class="btn-group" role="group" aria-label="Categorias">
+      <button type="button" class="btn btn-outline-success"
+              [ngClass]="{'active': categoriaSeleccionada === 'Vintage'}" (click)="categoriaSeleccionada='Vintage'">
+        Vintage
+      </button>
+      <button type="button" class="btn btn-outline-success"
+              [ngClass]="{'active': categoriaSeleccionada === 'Marcas'}" (click)="categoriaSeleccionada='Marcas'">Marcas
+      </button>
+      <button type="button" class="btn btn-outline-success"
+              [ngClass]="{'active': categoriaSeleccionada === 'Calzado'}" (click)="categoriaSeleccionada='Calzado'">
+        Calzado
+      </button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-3"  *ngFor="let articulo of articulos  | filtroCategoria:categoriaSeleccionada">
+      <app-articulo-card [articulo]="articulo"></app-articulo-card>
+    </div>
+  </div>
+</div>

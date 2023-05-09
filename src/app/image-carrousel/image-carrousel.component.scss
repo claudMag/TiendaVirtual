@@ -1,0 +1,12 @@
+img{
+  object-fit: cover;
+  height: 450px;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease
+}
+
+#carouselControls{
+  margin-top: 100px;
+}
